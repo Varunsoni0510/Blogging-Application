@@ -1,0 +1,102 @@
+ 
+
+<style>
+nav {
+  width: 100%;
+  height: 9%;
+  /* background-color: #232227; */
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2vmax 10vmin;
+}
+nav ul {
+  display: flex;
+  gap: 80px;
+}
+nav ul li {
+  list-style: none;
+}
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 100;
+}
+
+.menu-bar {
+  display: none;
+}
+
+.ri-close-line {
+  font-size: 50px;
+}
+
+@media (max-width: 1000px) {
+  ul {
+    position: absolute;
+    top: 0%;
+    left: -100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s ease-in-out;
+    flex-direction: column;
+    height: 100vh;
+    width: 50%;
+    gap: 5vmax;
+    background-color: black;
+  }
+  .menu-bar {
+    display: initial;
+  }
+
+  .ri-menu-line {
+    display: initial;
+    font-size: 40px;
+  }
+  
+}
+
+
+</style>
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+
+<nav>
+  <h2>Blog...</h2>
+
+  <ul>
+    <li>
+      <a href="<%= user ? '/homepage' : '/' %>">Homepage</a>
+    </li>
+
+    <% if(!user) { %>
+    <li><a href="/signup">SignUp</a></li>
+    <li><a href="/signin">SignIn</a></li>
+    <% } else { %>
+    <li><a href="/profile">Profile</a></li>
+    <li><a href="/signout">SignOut</a></li>
+    <%}%>
+  </ul>
+  <div class="menu-bar">
+    <i class="ri-menu-line"></i>
+  </div>
+</nav>
+
+<script>
+  var navbar = document.querySelector("ul");
+  var menu = document.querySelector(".menu-bar");
+  var flag = 0;
+
+  menu.addEventListener("click", function () {
+    if (flag == 0) {
+      navbar.style.left = 0;
+      menu.innerHTML = '<i class="ri-close-line"></i>';
+      flag = 1;
+    } else {
+      navbar.style.left = "-100%";
+      menu.innerHTML = '<i class="ri-menu-line"></i>';
+      flag = 0;
+    }
+  });
+</script>

@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  :root {
+    --primary-100: #00adb5;
+    --primary-200: #aae3e2;
+    --primary-300: #fdf6fd;
+    --accent-100: #ac7dd2;
+    --accent-200: #fff4ff;
+    --text-100: #eeeeee;
+    --text-200: #c5c5c5;
+    --bg-100: #222831;
+    --bg-200: #393e46;
+    --bg-300: #454e59;
+  }
+  
+  html,
+  body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-100);
+    color: var(--text-100);
+    text-transform: capitalize;
+  }
+  
+  header {
+    height: 90%;
+    width: 100%;
+  }
+  
+  .main {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  form {
+    padding-top: 20px;
+    overflow: hidden;
+    height: 90%;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    border: 1px solid white;
+    border-radius: 10px;
+  }
+  
+  input {
+    padding: 0.7vmax 2vmax;
+    border-radius: 50px;
+    text-align: center;
+  }
+  
+  
+  .main a {
+    color: var(--primary-100);
+    text-decoration: none;
+    font-size: 19px;
+  }
+  
+button {
+  background-color: #00adb5;
+  color: white;
+  border-color: white;
+  font-weight: 600;
+  padding: 12px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 16px;
+  transition: 0.4s ease-in-out;
+  cursor: pointer;
+}
+button:hover {
+  background-color: transparent;
+  border: 1px solid white;
+}

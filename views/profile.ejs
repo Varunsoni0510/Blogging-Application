@@ -1,0 +1,59 @@
+<%- include('partials/header') %>
+
+<link rel="stylesheet" href="/stylesheets/profile.css" />
+<header>
+  <%- include('partials/nav')%>
+  <!-- <h1>image</h1> -->
+  <div class="profile-container">
+    <div class="profile-pic">
+      <img
+        style="
+          height: 200px;
+          width: 200px;
+          object-fit: cover;
+          border-radius: 50%;
+          border: 1px solid white;
+        "
+        src="/images/<%= user.profileImage %>"
+        alt=""
+      />
+    </div>
+    <div class="profile-edit">
+      <h1><%= user.firstname%></h1>
+
+      <div class="profile-btn">
+        <a href="/updateProfile/<%= user._id%>">Update Profile</a>
+        <a href="/reset/<%= user._id%>">Reset Password</a>
+        <a href="/createBlog">Create New Blogs</a>
+      </div>
+      <form action="/profileImage" method="post" enctype="multipart/form-data">
+        <input type="file" name="profileImage" />
+        <button class="upload-btn">Upload Photo</button>
+      </form>
+    </div>
+  </div>
+</header>
+<hr />
+
+<div class="heading">
+  <h1>Post Blogs</h1>
+</div>
+
+<div class="get-all-posts">
+  <% blogs.forEach((blog) => { %>
+  <div class="card">
+    <h4><%= blog.createBy%></h4>
+    <h5><%= blog.createdAt.toLocaleDateString() %></h5>
+    <img src="<%= blog.img%>" alt="" />
+    <div class="card-text">
+      <h3><%= blog.title%></h3>
+      <h3><%= blog.description%></h3>
+    </div>
+    <span>
+      <a class="text-decoration-none" href="/updateblog/<%= blog._id%>">✏️</a>
+      <a class="text-decoration-none" href="/deleteblog/<%= blog._id%>">❌</a>
+    </span>
+  </div>
+  <%})%>
+</div>
+<%- include('partials/footer') %>

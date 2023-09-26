@@ -1,0 +1,17 @@
+<%- include('partials/header') %>
+
+<link rel="stylesheet" href="/stylesheets/signin.css" />
+
+<header>
+  <%- include('partials/nav') %>
+  <div class="main">
+    <form action="/signin" method="post">
+      <h1>login here</h1>
+      <input type="text" placeholder="Username" name="username" />
+      <input type="password" placeholder="Password" name="password" />
+      <a href="/forgetPassword">forget-password</a>
+      <button>Login</button>
+    </form>
+  </div>
+</header>
+<%- include('partials/footer') %>

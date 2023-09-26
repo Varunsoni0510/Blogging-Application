@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+
+<link rel="stylesheet" href="/stylesheets/updateprofile.css" />
+<header>
+  <%- include('partials/nav') %>
+  <div class="main">
+    <form action="/updateprofile/<%= user._id%>" method="post">
+      <h1>Update Profile</h1>
+      <input
+        type="text"
+        placeholder="First Name"
+        name="firstname"
+        value="<%= user.firstname%>"
+      />
+      <input
+        type="text"
+        placeholder="Last Name"
+        name="lastname"
+        value="<%= user.lastname%>"
+      />
+      <input
+        type="text"
+        placeholder="username"
+        name="username"
+        value="<%= user.username%>"
+      />
+      <input
+        type="number"
+        placeholder="Mobile Number"
+        name="number"
+        value="<%= user.number%>"
+      />
+      <input
+        type="text"
+        placeholder="email"
+        name="email"
+        value="<%= user.email%>"
+      />
+      <button>Update</button>
+    </form>
+  </div>
+</header>
+<%- include('partials/footer') %>

@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-100: #00adb5;
+  --primary-200: #aae3e2;
+  --primary-300: #fdf6fd;
+  --accent-100: #ac7dd2;
+  --accent-200: #fff4ff;
+  --text-100: #eeeeee;
+  --text-200: #c5c5c5;
+  --bg-100: #222831;
+  --bg-200: #393e46;
+  --bg-300: #454e59;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg-100);
+  color: var(--text-100);
+}
+
+header {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.profile-container {
+  height: 100%;
+  width: 100%;
+  /* background-color: #00adb5; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-pic {
+  width: 30%;
+  display: flex;
+  align-items: end;
+  justify-content: end;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-edit {
+  height: 90%;
+  width: 40%;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+}
+.profile-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.profile-btn a {
+  text-decoration: none;
+  color: #00adb5;
+  font-size: 18px;
+}
+form {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.upload-btn {
+  font-size: 15px;
+  padding: 4px 10px;
+  border-radius: 50px;
+  background-color: #00adb5;
+  color: white;
+  transition: 0.4s ease-in-out;
+  border: none;
+}
+.upload-btn:hover {
+  background-color: transparent;
+  border: 1px solid white;
+}
+
+/* post css */
+.heading {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1vmax;
+  padding-top: 2vmax;
+}
+.heading h1 {
+  font-size: 40px;
+  padding-bottom: 1vmax;
+}
+.get-all-posts{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2vmax;
+  margin: 10px 17.5vmax;
+}
+
+.card{
+  height: 500px;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid white;
+  overflow: hidden;
+  gap: 1vmax;
+  padding: 10px 0px;
+}
+
+.card img{
+  height: 60%;
+  width: 80%;
+  border-radius: 10px;
+}
+.card-text{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 20px;
+}
+
+
+span a{
+  font-size: 20px;
+}
+
+@media (max-width:1000px) {
+  .card{
+    width: 100%;
+  }
+  .get-all-posts{
+    margin: 10px 90px;
+  }
+  
+}

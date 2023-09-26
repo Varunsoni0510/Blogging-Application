@@ -1,0 +1,15 @@
+<%- include('partials/header') %>
+
+<link rel="stylesheet" href="/stylesheets/reset.css" />
+<header>
+  <%- include('partials/nav') %>
+  <div class="main">
+    <form action="/reset/<%= id%>" method="post">
+      <h1>Reset Password</h1>
+      <input type="password" placeholder="Old Password" name="oldpassword" />
+      <input type="password" placeholder="New Password" name="password" />
+      <button>Reset Password</button>
+    </form>
+  </div>
+</header>
+<%- include('partials/footer') %>

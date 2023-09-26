@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+
+ 
+
+<link rel="stylesheet" href="/stylesheets/updateblog.css" />
+    <header>
+      <%- include('partials/nav')%>
+      <div class="main">
+        <form action="/updateblog/<%= blog._id %>" method="post">
+          <h1>update Blog page</h1>
+          <img src="<%= blog.img%>" alt="" />
+          <input type="text" name="img" value="<%= blog.img%>" />
+          <input type="text" name="title" value="<%= blog.title%>" />
+          <input
+            type="text"
+            name="description"
+            value="<%= blog.description%>"
+          />
+          <button>Update</button>
+        </form>
+      </div>
+    </header>
+    <%- include('partials/footer') %>
+  

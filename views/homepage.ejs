@@ -1,0 +1,35 @@
+<%- include('partials/header') %>
+
+<link rel="stylesheet" href="/stylesheets/homepage.css" />
+<header>
+  <%- include('partials/nav')%>
+  <div class="profile">
+    <img
+      style="height: 100px; width: 100px; object-fit: cover; border-radius: 50%"
+      src="/images/<%= user.profileImage %>"
+      alt=""
+    />
+    <a href="/createBlog">Create New Blogs</a>
+  </div>
+</header>
+<hr />
+
+<div class="heading">
+  <h1>Homepage</h1>
+</div>
+
+<div class="all-user-posts">
+  <% globalPost.forEach((post) => { %>
+
+  <div class="card">
+    <h4><%= post.createBy%></h4>
+    <h5><%= post.createdAt.toLocaleDateString() %></h5>
+    <img src="<%= post.img%>" alt="" />
+    <div class="card-text">
+      <h3><%= post.title%></h3>
+      <h3><%= post.description%></h3>
+    </div>
+  </div>
+  <%})%>
+</div>
+<%- include('partials/footer') %>
